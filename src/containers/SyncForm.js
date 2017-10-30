@@ -1,47 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { Row, InfoMessage } from 'components';
 import * as actions from 'actions';
 /**
  * Redux Form HOC
  */
 import { Field, reduxForm } from 'redux-form';
-
-const Row = styled.div`
-  position: relative;
-  width: 400px;
-  margin: 0 auto;
-
-  > * {
-    display: inline-block;
-  }
-
-  > .title {
-    margin-right: 8px;
-  }
-
-  .form-error {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: red;
-    font-size: 12px;
-  }
-
-  .form-warning {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: orange;
-    font-size: 12px;
-  }
-`
-
-const InfoMessage = styled.div`
-  width: 400px;
-  color: #666;
-  margin: 32px auto;
-`;
 
 const validater = values => {
   const errors = {};

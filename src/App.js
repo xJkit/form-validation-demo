@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link, Switch, Route } from 'react-router-dom';
+import logoGitHub from './logo-github.png';
 import logo from './logo-rf.png';
 import './App.css';
 
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <a href="https://github.com/xJkit/form-validation-demo" className="App-logo-github"><img src={logoGitHub} alt="github" /></a>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Redux-Form demo by
             <a href="https://github.com/xJkit" target="_blank" rel="noopener noreferrer">@xJkit</a>

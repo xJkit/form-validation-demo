@@ -7,7 +7,19 @@
   height: 80px;
 }
 
+.App-logo-github {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.App-logo-github > img {
+  width: 40px;
+}
+
 .App-header {
+  position: relative;
   background-color: #222;
   height: 150px;
   padding: 20px;

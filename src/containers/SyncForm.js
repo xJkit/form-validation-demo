@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Row, InfoMessage } from 'components';
+import { Row, InfoMessage, Button } from 'components';
 import * as actions from 'actions';
 /**
  * Redux Form HOC
@@ -64,6 +64,7 @@ const SyncForm = (props) => {
   const {
     handleSubmit, // redux-form handleSubmit(myFunc)
     handleFormSubmitByAction,
+    reset,
    } = props;
   return (
     <div >
@@ -71,7 +72,8 @@ const SyncForm = (props) => {
       <form onSubmit={handleSubmit(mySubmit(handleFormSubmitByAction))}>
         <Field name="account" label="帳號" component={renderField} type="text" />
         <Field name="password" label="密碼" component={renderField} type="password" />
-        <button type="submit">送出</button>
+        <Button type="submit" btnStyle="primary">送出</Button>
+        <Button type="button" onClick={reset}>清除</Button>
       </form>
       <InfoMessage>
         <p>Synchronous Form 就是 input 只要有變動就會 dispatch actions: @@redux-form/EVENT</p>

@@ -17,4 +17,9 @@ export default styled.button`
   &:active {
     opacity: 0.8;
   }
+
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
 `;

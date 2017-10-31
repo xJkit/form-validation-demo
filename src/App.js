@@ -7,7 +7,7 @@ import './App.css';
 /**
  * containers
  */
-import { Home, SyncForm, SubmitForm } from 'containers';
+import { Home, SyncForm, SubmitForm, FieldLevelForm } from 'containers';
 
 const NavBar = styled.div`
   mairgin-bottom: 16px;
@@ -32,14 +32,16 @@ class App extends Component {
         </header>
         <div className="App-intro">
         <NavBar>
-          <Link to="/">Home</Link>
-          <Link to="/sync-form">SyncForm</Link>
-          <Link to="/submit-form">SubmitForm</Link>
+          <Link className="border" to="/">Home</Link>
+          <Link className="border" to="/sync-validation-form">SyncForm</Link>
+          <Link className="border" to="/field-level-validation-form">Field-level Form</Link>
+          <Link className="border" to="/submit-validation-form">SubmitForm</Link>
         </NavBar>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/sync-form" component={SyncForm} />
-          <Route path="/submit-form" component={SubmitForm} />
+          <Route path="/sync-validation-form" component={SyncForm} />
+          <Route path="/field-level-validation-form" component={FieldLevelForm} />
+          <Route path="/submit-validation-form" component={SubmitForm} />
         </Switch>
         </div>
       </div>

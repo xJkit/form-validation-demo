@@ -24,7 +24,13 @@
 
 a {
   text-decoration: none;
-  color: #82D7F7
+  color: #82D7F7;
+  padding: 4px 8px;
+}
+
+a.border {
+  border: 1px solid #82D7F7;
+  border-radius: 4px;
 }
 
 @keyframes App-logo-spin {

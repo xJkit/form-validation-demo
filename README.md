@@ -31,3 +31,15 @@ Submit Validation 使用後端驗證，模擬發送一個 API 到後端 3 秒回
 表單的畫法跟 SyncForm 一模一樣，僅差別在 validation 抽離了 redux-form decorator
 
 照理來說 Sync validation 跟 Submit validation 應該要一起做, 為了程式碼簡潔而分開。
+
+## Initialize Form with initial states
+
+Redux-form 提供一個特別的 props 叫做 initialValues, 這個物件讓你設定 Field 的初始值，根據各欄位的 name 丟值進去就好。
+
+設定 initialValues 的兩種方式：
+
+直接設定 initialValues 這個特別的 props.
+你可以從 reduxForm 的 options, 初始化時 hardcode 進去
+或是從 store 抓出來，寫在 mapStateToProps 裡面，在這裡指定 initialValues. 注意！！如果 initialValues 要從 store 拿值， reduxForm 的 decorator 必須寫在 connect 裡面。
+使用 redux-form 獨有的 action creator: initialize(form: string, data: object, keepDirty: boolean)
+設定初始值後，就是這個 form 狀態的 pristine. 使用 reset 將會恢復到 pristine 的狀態。

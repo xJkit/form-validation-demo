@@ -9,7 +9,7 @@ const createRequestTypes = (base) => ({
  * Action Types
  */
 export const FORM_SUBMIT = createRequestTypes('FORM_SUBMIT');
-
+export const CHANGE_INITIAL_AUTH = 'CHANGE_INITIAL_AUTH';
 /**
  * Fake sleep
  */
@@ -48,3 +48,10 @@ export const handleBackendAuth = (values) => async (dispatch) => {
     }));
   }
 };
+
+export const changeInitialAuth = (data) => (dispatch) => {
+  return dispatch({
+    type: CHANGE_INITIAL_AUTH,
+    payload: data,
+  });
+}

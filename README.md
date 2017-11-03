@@ -43,3 +43,12 @@ Redux-form 提供一個特別的 props 叫做 initialValues, 這個物件讓你�
 或是從 store 抓出來，寫在 mapStateToProps 裡面，在這裡指定 initialValues. 注意！！如果 initialValues 要從 store 拿值， reduxForm 的 decorator 必須寫在 connect 裡面。
 使用 redux-form 獨有的 action creator: initialize(form: string, data: object, keepDirty: boolean)
 設定初始值後，就是這個 form 狀態的 pristine. 使用 reset 將會恢復到 pristine 的狀態。
+
+## Remote Submit Form
+
+Remote Submit 使用場景是當 Button:submit 不在該 form 底下，所以接收不到 child 的 onSubmit 事件
+
+解法是透過 Redux actions.
+遙遠的 Button 組件在 onClick 事件來 dispatch 來自 redux-form 的特殊 action creators: submit 或 reset
+submit/reset 會指定 form name, 在該 form 的 reduxForm decorator options 中透過 onSubmit 傳自己的 mySubit 函數
+而 原本的 form 組件上面的 onSubmit 就依舊是 handleSubmit props.

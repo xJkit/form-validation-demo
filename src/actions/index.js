@@ -1,4 +1,4 @@
-import { SubmissionError } from 'redux-form';
+import { SubmissionError, submit } from 'redux-form';
 const createRequestTypes = (base) => ({
   REQUEST: `${base}_REQUEST`,
   SUCCESS: `${base}_SUCCESS`,
